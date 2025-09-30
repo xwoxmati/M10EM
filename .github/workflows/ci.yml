@@ -25,9 +25,8 @@ jobs:
       - name: Train (if needed)
         run: |
           python - <<'PY'
-          import os
-          from pathlib import Path
-          if not Path("models/model.joblib").exists():
+          import pathlib
+          if not pathlib.Path("models/model.joblib").exists():
               import train
               train.train_and_save()
           print("Modelo OK")
